@@ -1,0 +1,12 @@
+version: "3.3"
+services:
+  smee:
+    build:
+      context: .
+    image: smee
+    ports:
+      - "8080:8080"
+      - "50000:50000"
+    environment:
+      PORT: 8081
+    command: ["--port", "8080", "--path", "/github-webhook/"]
